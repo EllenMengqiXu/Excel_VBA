@@ -13,6 +13,9 @@ This project focuses on basic VBA programming used to generate reports and is no
 * keep relevant columns
 * split data into several worksheets
 * insert column and add formula
+* highlight value counted
+* massage box before running macro
+* copy paste to a new sheet and rename
 * and so on......
 
 
