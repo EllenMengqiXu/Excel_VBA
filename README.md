@@ -16,6 +16,7 @@ This project focuses on basic VBA programming used to generate reports and is no
 * highlight value counted
 * massage box before running macro
 * copy paste to a new sheet and rename
+save as path and cellvalue and date
 * and so on......
 
 
