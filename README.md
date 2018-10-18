@@ -16,7 +16,7 @@ TO BE CONTINUED
 * highlight value counted
 * massage box before running macro
 * copy paste to a new sheet and rename
-* save as path and cellvalue and date
+* save as file specific: path and contains: cell value and date
 * and so on......
 
 
