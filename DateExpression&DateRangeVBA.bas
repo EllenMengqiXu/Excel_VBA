@@ -3,9 +3,13 @@ Attribute VB_Name = "Second_DateFilter"
 'AS of 10/11/2018
 'year: TEXT(TODAY(),"YYYY") --> 2018
 'year: TEXT(TODAY(),"YY") --> 18
+'month: TEXT(TODAY(),"M") --> 10 (if it's Semptember, it will be 9 instead of 09)
 'month: TEXT(TODAY(),"MM") --> 10
 'month: TEXT(TODAY(),"MMMM") --> October
-'day: TEXT(TODAY(),"DD") --> 10
+'month: TEXT(TODAY(),"MMMMM") --> O (only the first letter ofthe month name is displayed)
+'day: TEXT(TODAY(),"D") --> 11 (if it's 9th, it will be 9 instead of 09 [the leading 0 will disappear])
+'day: TEXT(TODAY(),"DD") --> 11
+'day: TEXT(TODAY(),"DD") --> Thu
 'day: TEXT(TODAY(),"DDDD") --> Thursday
 'month/day/year: TEXT(TODAY(),"MM/DD/YYYY") --> 10/11/2018
 
