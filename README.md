@@ -17,6 +17,9 @@ TO BE CONTINUED
 * massage box before running macro
 * copy paste to a new sheet and rename
 * save as file specific: path and contains: cell value and date
+* copy from specific row and paste to last column
+* copy from last column and paste to next availalbe column
+* copy and paste special such as values, formulas, and number format
 * and so on......
 
 
