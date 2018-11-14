@@ -1,5 +1,5 @@
-Attribute VB_Name = "WTGL"
-Sub WTGL()
+Attribute VB_Name = "CS"
+Sub CS()
     Const SPCol = "D"
     Const HeaderRow = 1
     Const FirstRow = 2
@@ -18,32 +18,32 @@ Sub WTGL()
     Dim LC As Long
     Dim WS_Count As Integer
     Dim I As Integer
-    
+    'select data range which does not in a row
     Set sh = ActiveSheet
     With sh
         LastRow = Range("A" & Rows.Count).End(xlUp).Row
         Set r = Union(.Range("A2:N" & LastRow), .Range("PL2:PX" & LastRow))
     End With
-    
+    'copy selected range and create a new workbook and paste
     r.Copy
     Set NewBook = Workbooks.Add
     NewBook.Worksheets("Sheet1").Paste
-    
+    'unwarp data
     ActiveSheet.Rows.WrapText = False
-    
+    'filter data with an array
     With ActiveSheet
         .AutoFilterMode = False
         .UsedRange.AutoFilter
         .UsedRange.AutoFilter Field:=4, Criteria1:=Array("apple", "banana", "car", "dog", "engineer", "fire", "google"), Operator:=xlFilterValues
     End With
-      
+    'create a new sheet nearby and paste filtered data
     Sheets.Add.Name = "New"
     Sheets("Sheet1").Activate
     Range("A1").CurrentRegion.Copy
     Worksheets("New").Paste
     Application.CutCopyMode = False
     Worksheets("New").Activate
-    
+'Split data based on Column D's values
     Application.ScreenUpdating = False
     Set SrcSheet = ActiveSheet
     LR = SrcSheet.Cells(SrcSheet.Rows.Count, SPCol).End(xlUp).Row
@@ -68,7 +68,7 @@ Sub WTGL()
     For I = 1 To WS_Count
         
         Sheets(I).Select
-        
+'insert formulas on a specific cell and set font and number format
         LC = Range("A" & Rows.Count).End(xlUp).Row
         Cells(LC + 1, 25).Formula = "=SUM(Y2:Y" & LC & ")"
         Cells(LC + 1, 25).Font.FontStyle = "Bold"
@@ -79,9 +79,9 @@ Sub WTGL()
 
             
     Next
-        
+'define path and save file as name plus date.    
     Dim Path As String
-    Path = "C:\Users\exu\Desktop\Sales Updates\"
+    Path = "C:\Users\exu\Desktop\examples\"
     ActiveWorkbook.saveas filename:=Path & "fruits_Updates" & "_" & Format(Now(), "MM-DD-YY") & ".xls", FileFormat:=xlNormal
 
        
