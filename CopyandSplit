@@ -68,7 +68,7 @@ Sub CS()
     For I = 1 To WS_Count
         
         Sheets(I).Select
-'insert formulas on a specific cell and set font and number format
+    'insert sum formulas on a specific cell and set font and number format
         LC = Range("A" & Rows.Count).End(xlUp).Row
         Cells(LC + 1, 25).Formula = "=SUM(Y2:Y" & LC & ")"
         Cells(LC + 1, 25).Font.FontStyle = "Bold"
@@ -79,7 +79,7 @@ Sub CS()
 
             
     Next
-'define path and save file as name plus date.    
+    'define path and save file as name plus date.    
     Dim Path As String
     Path = "C:\Users\exu\Desktop\examples\"
     ActiveWorkbook.saveas filename:=Path & "fruits_Updates" & "_" & Format(Now(), "MM-DD-YY") & ".xls", FileFormat:=xlNormal
