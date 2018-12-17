@@ -5,7 +5,7 @@ This project focuses on basic VBA programming used to generate reports and is no
 ---
 TO BE CONTINUED
 
-*what you can get from here:
+*what you can get from here:*
 
 Message Box
 ```
@@ -27,7 +27,7 @@ Create Newsheet
 ```
 Sheets.Add.Name = "New"
 ```
-* define last Row
+define last Row
 ```
 LastRow = ActiveSheet.Range("Y" & Rows.Count).End(xlUp).Row
 ```
@@ -43,6 +43,23 @@ Insert Cols and name first cell
 ```
 Range("X1").EntireColumn.Insert shift:=xlToRight
 Range("X1").Value = "orange"
+```
+copy paste special
+```
+ActiveSheet.Range("I4:I26").Copy
+        ActiveSheet.Range("C4:C26").PasteSpecial Paste:=xlPasteValues
+        Application.CutCopyMode = False
+ActiveSheet.Range("H28:H34").Copy
+        ActiveSheet.Range("D28:D34").PasteSpecial Paste:=xlPasteFormulas
+        Application.CutCopyMode = False        
+```
+clear cntents
+```
+ActiveSheet.Range("D71:H77").ClearContents
+```
+add value to a cell
+```
+Cells(4, 13).Value = Cells(4, 13).Value + 1
 ```
 * remove rows and columns
 * filter and sort
@@ -70,7 +87,19 @@ Copy range from sheet A to sheet B
 
 Delete Column
 
-Define Cell format
+Define cell format
 
 Insert Cols and name first cell
+
+**Pineapple Report**
+
+Message Box
+
+Define cell format
+
+copy paste special
+
+Clear contents
+
+Add value to a cell
 
