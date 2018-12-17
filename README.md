@@ -107,12 +107,6 @@ Cells(LC + 1, 25).Formula = "=SUM(Y2:Y" & LC & ")"
 Cells(LC + 1, 25).Font.FontStyle = "Bold"
 Cells(LC + 1, 25).NumberFormat = "$#,##0.00"
 ```
-Define path and save file as name plus date
-```
-Dim Path As String
-Path = "C:\Users\exu\Desktop\examples\"
-ActiveWorkbook.saveas filename:=Path & "fruits_Updates" & "_" & Format(Now(), "MM-DD-YY") & ".xls", FileFormat:=xlNormal
-```
 Insert column and add formula
 ```
 Sub InsertBudgetDiff()
@@ -133,6 +127,26 @@ End Sub
 SORT DATA BASED ON M COLUMN IN DESCENDING (FROM OLDEST TO NEWEST)
 ```
 Range("A1").CurrentRegion.Sort Key1:=Range("M1"), Order1:=xlDescending, Header:=xlYes
+```
+highlighted column L whose value counted
+```
+lastRow = ActiveSheet.Range("L" & Rows.Count).End(xlUp).Row
+Range("L2:L" & lastRow).Interior.Color = vbYellow
+```
+Save As
+```
+Sub savefile()
+    
+    Dim Path As String
+    Dim filename As String
+	'clarify where you want to save your file
+    Path = "C:\Users\exu\Desktop\love\"
+	'clarify your filename by choosing from excel sheet
+    filename = Range("A1")
+	'use & to connect words and date,'mm' means 10, 'mmm' means Oct, and 'mmmm' menas October.  
+    ActiveWorkbook.saveas filename:=Path & filename & "_love_" & Format(Now(), "mmm") & "_" & Format(Now(), "DD-MM-YY") & ".xls", FileFormat:=xlNormal
+    
+End Sub
 ```
 * remove rows and columns
 * filter and sort
@@ -244,7 +258,7 @@ SORT DATA BASED ON M COLUMN IN DESCENDING (FROM OLDEST TO NEWEST)
 
 SAVE FILE AS .XLS FORMAT AS CSV FORMAT CANNOT SAVE EXCEL FUNCTION
 
-**Pearl**
+**Pearl Report**
 
 Multiple Filters
 
@@ -260,3 +274,43 @@ Keep Relevant Columns
 LASTLY AN ESCAPE IN CASE THE SHEET HAS NO COLUMNS LEFT
 
 SAVE FILE AS .XLS FORMAT
+
+**Resberry Report**
+
+set up the begging of current month and today's date
+
+filter record whose not comfortable and date range between the first day of current month and today
+
+sort data as from oldest to newest
+
+copy data and paste to a new sheet and rename it as L1 Value
+
+move to the new sheet, which next to the current sheet
+
+highlighted column L whose value counted
+
+**Blackberry Report**
+
+copy filtered records
+
+create a new workbook
+
+paste filtered records to the new workbook
+
+define the location of the new Workbook
+
+filename comes from D2
+
+save the new workbook under the defined path and file name
+
+define column N equals to the sum of column R through column AU
+
+save file again
+
+**Durian Report**
+
+Select same name tab such as a,b,c from different reports under same directory
+
+Store these tabs in destination workbooks and tabs' name are from the first four letter of their original workbook
+
+save the destination workbooks as a.xls, b.xls and c.xls.
