@@ -3,7 +3,8 @@ Excel_VBA
 
 This project focuses on basic VBA programming used to generate reports and is not finished yet. Generally, it is accumulated when there is new knowledges need me to learn.
 ---
-TO BE CONTINUED
+
+TO BE CONTINUED...
 
 *what you can get from here:*
 
@@ -27,7 +28,7 @@ Create Newsheet
 ```
 Sheets.Add.Name = "New"
 ```
-define last Row
+Define last Row
 ```
 LastRow = ActiveSheet.Range("Y" & Rows.Count).End(xlUp).Row
 ```
@@ -44,7 +45,7 @@ Insert Cols and name first cell
 Range("X1").EntireColumn.Insert shift:=xlToRight
 Range("X1").Value = "orange"
 ```
-copy paste special
+Copy paste special
 ```
 ActiveSheet.Range("I4:I26").Copy
         ActiveSheet.Range("C4:C26").PasteSpecial Paste:=xlPasteValues
@@ -53,11 +54,11 @@ ActiveSheet.Range("H28:H34").Copy
         ActiveSheet.Range("D28:D34").PasteSpecial Paste:=xlPasteFormulas
         Application.CutCopyMode = False        
 ```
-clear cntents
+Clear cntents
 ```
 ActiveSheet.Range("D71:H77").ClearContents
 ```
-add value to a cell
+Add value to a cell
 ```
 Cells(4, 13).Value = Cells(4, 13).Value + 1
 ```
@@ -79,15 +80,15 @@ Copy range and paste to the last blank range
 ActiveSheet.Range("A5:A11").Copy
 ActiveSheet.Range("IV5").End(xlToLeft).Offset(, 1).PasteSpecial Paste:=xlPasteValues
 ```  
-select multiple data ranges
+Select multiple data ranges
 ```
 Set r = Union(.Range("A2:N" & LastRow), .Range("PL2:PX" & LastRow))
 ```
-unwarp data
+Unwarp data
 ```
 ActiveSheet.Rows.WrapText = False
 ```
-filter data with an array
+Filter data with an array
 ```
 With ActiveSheet
         .AutoFilterMode = False
@@ -95,25 +96,41 @@ With ActiveSheet
         .UsedRange.AutoFilter Field:=4, Criteria1:=Array("apple", "banana", "car", "dog", "engineer", "fire", "google"), Operator:=xlFilterValues
 End With
 ```
-insert sum formulas on a specific cell and set font and number format
+Insert sum formulas on a specific cell and set font and number format
 ```
 LC = Range("A" & Rows.Count).End(xlUp).Row
 Cells(LC + 1, 25).Formula = "=SUM(Y2:Y" & LC & ")"
 Cells(LC + 1, 25).Font.FontStyle = "Bold"
 Cells(LC + 1, 25).NumberFormat = "$#,##0.00"
 ```
-define path and save file as name plus date
+Define path and save file as name plus date
 ```
 Dim Path As String
 Path = "C:\Users\exu\Desktop\examples\"
 ActiveWorkbook.saveas filename:=Path & "fruits_Updates" & "_" & Format(Now(), "MM-DD-YY") & ".xls", FileFormat:=xlNormal
+```
+Insert column and add formula
+```
+Sub InsertBudgetDiff()
+Dim x As Long
+Dim d As String
+
+Application.ScreenUpdating = False
+Range("M1").EntireColumn.Insert shift:=xlToRight
+Range("M1").Value = "Budget Difference"
+x = Range("A" & Rows.Count).End(xlUp).Row
+d = "=K2-L2"
+Range("M2").Resize(x - 1).Formula = d
+Application.ScreenUpdating = True
+
+End Sub
 ```
 * remove rows and columns
 * filter and sort
 * remove duplicates
 * keep relevant columns
 * split data into several worksheets
-* insert column and add formula
+* 
 * highlight value counted
 * massage box before running macro
 * copy paste to a new sheet and rename
