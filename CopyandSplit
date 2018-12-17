@@ -18,7 +18,7 @@ Sub CS()
     Dim LC As Long
     Dim WS_Count As Integer
     Dim I As Integer
-    'select data range which does not in a row
+    'select multiple data ranges
     Set sh = ActiveSheet
     With sh
         LastRow = Range("A" & Rows.Count).End(xlUp).Row
