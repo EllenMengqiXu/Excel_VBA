@@ -58,7 +58,7 @@ ActiveSheet.Range("H28:H34").Copy
         ActiveSheet.Range("D28:D34").PasteSpecial Paste:=xlPasteFormulas
         Application.CutCopyMode = False        
 ```
-Clear cntents
+Clear contents
 ```
 ActiveSheet.Range("D71:H77").ClearContents
 ```
@@ -148,21 +148,6 @@ Sub savefile()
     
 End Sub
 ```
-* remove rows and columns
-* filter and sort
-* remove duplicates
-* keep relevant columns
-* split data into several worksheets
-* 
-* highlight value counted
-* massage box before running macro
-* copy paste to a new sheet and rename
-* save as file specific: path and contains: cell value and date
-* copy from specific row and paste to last column
-* copy from last column and paste to next availalbe column
-* copy and paste special such as values, formulas, and number format
-* and so on......
-
 **Apple Report**
 
 Message Box
