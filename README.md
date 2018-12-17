@@ -36,6 +36,10 @@ Delete Column
 ```
 ActiveSheet.Range("B:B").Delete
 ```
+Delete the first row
+```
+ActiveSheet.Range("1:1").Delete
+```
 Define Cell format
 ```
 ActiveSheet.Range("G:H,J:J,W:W").NumberFormat = "m/d/yyyy"
@@ -125,6 +129,11 @@ Application.ScreenUpdating = True
 
 End Sub
 ```
+
+SORT DATA BASED ON M COLUMN IN DESCENDING (FROM OLDEST TO NEWEST)
+```
+Range("A1").CurrentRegion.Sort Key1:=Range("M1"), Order1:=xlDescending, Header:=xlYes
+```
 * remove rows and columns
 * filter and sort
 * remove duplicates
@@ -200,3 +209,54 @@ Split data based on Column D's values
 insert sum formulas on a specific cell and set font and number format
 
 define path and save file as name plus date
+
+**Kiwi Report**
+
+Delete the first row
+
+Unwrap all active Rows
+
+Delete columns
+
+Sort worksheet baed on column B value by ascending (date from oldest to newest) order
+
+Filter column 12 whose value contains (6), * stands for wildcard
+
+Delete filtered Data
+
+Show data after Being Deleted
+
+**Date Report**
+
+KEEP RELEVANT COLUMNS
+
+CHECK WHETHER TO KEEP THE COLUMN
+* IF YES THEN SKIP TO THE NEXT COLUMN,
+* IF NO DELETE THE COLUMN
+
+LASTLY AN ESCAPE IN CASE THE SHEET HAS NO COLUMNS LEFT
+
+Insert a new column whose head called "Bike Dog" and cell formuna as K2-L2
+
+FILTER COLUMN 8 AS DATE OF THIS MONTH AND COLUMN 10 WHOSE VALUE IS COMFORTABLE
+
+SORT DATA BASED ON M COLUMN IN DESCENDING (FROM OLDEST TO NEWEST)
+
+SAVE FILE AS .XLS FORMAT AS CSV FORMAT CANNOT SAVE EXCEL FUNCTION
+
+**Pearl**
+
+Multiple Filters
+
+Filter Date Range from today(current day in excel function is TODAY(),and it is date in VBA)
+
+SortingAscending
+
+Keep Relevant Columns
+
+* IF YES THEN SKIP TO THE NEXT COLUMN,
+* IF NO DELETE THE COLUMN
+
+LASTLY AN ESCAPE IN CASE THE SHEET HAS NO COLUMNS LEFT
+
+SAVE FILE AS .XLS FORMAT
