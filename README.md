@@ -100,6 +100,10 @@ With ActiveSheet
         .UsedRange.AutoFilter Field:=4, Criteria1:=Array("apple", "banana", "car", "dog", "engineer", "fire", "google"), Operator:=xlFilterValues
 End With
 ```
+Hide multiple columns
+```
+Range("B:D,I:J,L:L,N:Q,T:AI").EntireColumn.Hidden = True
+```
 Insert sum formulas on a specific cell and set font and number format
 ```
 LC = Range("A" & Rows.Count).End(xlUp).Row
